@@ -1,0 +1,100 @@
+body{
+  padding-top:100px;
+  background-image:url(../images/bg/bricks_light.png);
+  margin-left: auto;
+  margin-right: auto;
+  width:620px;
+}
+#fairy_gauge img{
+    z-index:10;
+    position:relative;
+}
+meter{
+    transform: rotate(270deg);
+    margin-top:20px;
+    z-index:0;
+    position:relative;
+}
+.col{
+    /* border-color: blue;
+    border-width: 1px;
+    border-style: solid;
+    background-color: lightblue; */
+
+}
+.gamepart{
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+#left_col{
+    float:left;
+    width:130px;
+    height:480px;
+}
+#mid_col{
+  float:left;
+  width:270px;
+  height:480px;
+}
+#game_board{
+  background-image:url(../images/bg/bricks_dark.png);    
+  margin-left: auto;
+  margin-right: auto;    
+  width:192px;
+  height:480px;
+  background-color:darkgray;
+  line-height:0px; 
+}
+#preview_block{
+  margin-left: auto;
+  margin-right: auto;    
+  width:80px;
+  height:110px;
+  background-color:darkgray;
+  margin-top:50px;
+  text-align:center;
+
+}
+#preview_block_block {
+  margin-left: auto;
+  margin-right: auto;   
+  width:64px;
+  height:64px;
+  line-height:0px;
+  padding:0px;
+
+}
+
+#fairy_gauge{
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;    
+    width:80px;
+    height:170px;
+    background-color:darkgray;
+    margin-top:100px;
+}
+#right_col{
+    float:left;
+    width:220px;
+    height:480px;
+}
+#score{
+    margin-left: auto;
+    margin-right: auto;    
+    width:180px;
+    height:100px;
+    background-color:darkgray;
+    margin-top:50px;
+    text-align:center;
+}
+#level{
+    margin-left: auto;
+    margin-right: auto;    
+    width:180px;
+    height:100px;
+    background-color:darkgray;
+    margin-top:50px;
+    text-align:center;
+}
