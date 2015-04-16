@@ -20,6 +20,7 @@ KEY_RIGHT	= 39;
 var position_left = 2; 
 var position_right = 3;
 var nb_coup = 0;
+var higher_block = 0;
 
 k = 0; // Counter for blocks fall (15 lines)
 
@@ -154,6 +155,44 @@ function random_next_block()
   return random_block;
 }
 
+function check_crate_line(k) // not finished
+{
+  var affichage ="";
+  
+  for(cpt = 0; cpt < 6; cpt++)
+  {
+    affichage = affichage  + blocks[ cpt ][ k ] + " - ";
+  }
+  
+  //alert(affichage);
+  
+  var blockstested = 0;
+  var actualblock = "empty";
+  
+  do
+  {
+    blockstested++;
+    if(blockstested == 6)
+      alert("full line crate"); //delete_and_replace();
+      
+  
+    
+  }while(blocks[ blockstested - 1 ][ k ] == "crate")
+
+
+}
+
+function check_empty(k)
+{
+    
+
+
+
+}
+
+
+
+
 init_next_block();
 
 
@@ -225,25 +264,34 @@ function ingame(){
     blocks[ position_right ][ (k + 1) ] = current_block.type[1][1];
 
     
+    
     k++;
     
-    //alert(blocks[ position_left ][ (k + 1) ]+" - "+blocks[ position_right ][ (k + 1) ]); // debug, showing the two block under current block in real time
+    //alert(k);
+    
+    //console.log(blocks[ position_left ][ (k + 1) ]+" - "+blocks[ position_right ][ (k + 1) ]); // debug, showing the two block under current block in real time
 
 
     // We check if we are at the last line or if they are blocks under current blocks
     if( k == 14 || ( blocks[ position_left ][ (k + 1) ] != "empty") || ( blocks[ position_right ][ (k + 1) ] != "empty" ))
     {
+
+      check_crate_line(k); // we check if we have a full line crate for current blocks just set
+      check_crate_line(k-1);
       
-      
-      //alert(blocks[ (k + 7) , position_right]); // debug
+      check_empty(k);
       
       clearInterval(timing);
+      
 
       k=0;
 
+      var tempo = current_block; // testing
       current_block = next_block;
-      next_block = random_next_block();
-
+      //next_block = random_next_block();
+      next_block = tempo; // testing
+      
+      
       init_next_block();
 
       position_left = 2; 
